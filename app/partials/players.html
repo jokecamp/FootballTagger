@@ -1,0 +1,18 @@
+<div ng-controller="PlayerCtrl">
+	<p>This is the partial for view 2 and player controller.</p>
+	<p>
+		List of Players:
+		<ul>
+	        <li ng-repeat="player in players">
+	          <span>{{player.firstname}} {{player.lastname}}</span>
+	        </li>
+		</ul>
+	</p>
+
+    <form ng-submit="addPlayer()">
+        <input type="text" ng-model="firstnameText" size="30" placeholder="firstname">
+        <input type="text" ng-model="lastnameText" size="30" placeholder="lastname">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+
+</div>
