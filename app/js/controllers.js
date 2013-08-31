@@ -3,18 +3,26 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('PlayerCtrl', ['$scope', function($scope) {
+  .controller('PlayerCtrl', ['$scope', '$http', function($scope, $http) {
 
-  	$scope.players = [
-    	{firstname:'Ryan', lastname:"Giggs"},
-    	{firstname:'Joe', lastname:"Kampschmidt"},
-    	{firstname:'Wayne', lastname:"Rooney"},
-    ];
+    $http.get('http://192.241.243.215/api/players.json').success(function (data) {
+            $scope.players = data;
+        });
 
 	$scope.addPlayer = function() {
-	    $scope.players.push({firstname:$scope.firstnameText, lastname:$scope.lastnameText});
+
+      $http.post('http://192.241.243.215/api/players/0', { Firstname:$scope.firstnameText, Lastname:$scope.lastnameText }).success(function(data) {
+
+        $http.get('http://192.241.243.215/api/players.json').success(function (data) {
+            $scope.players = data;
+        });    
+
+      });
+
 	    $scope.firstnameText = '';
 	    $scope.lastnameText = '';
+
+  
 	  };
 
   }]);
