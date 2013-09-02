@@ -1,4 +1,4 @@
-<div ng-controller="TagsCtrl">
+<div>
 	<p>
 		List of Tags:
 		<ul>
@@ -9,7 +9,7 @@
 	</p>
 
     <form ng-submit="addTag()">
-        <input type="text" ng-model="nameText" size="30" placeholder="name">
+        <input type="text" ng-model="tag.Name" size="30" placeholder="name">
         <input class="btn-primary" type="submit" value="add">
       </form>
 
