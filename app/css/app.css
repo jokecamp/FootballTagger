@@ -28,3 +28,12 @@
   content: "";
   padding: 0;
 }
+
+a.tag {
+  background-color: #c4dae9;
+  border-bottom: 1px solid #c4dae9;
+  border-right: 1px solid #c4dae9;
+  text-decoration: none;
+  margin:2px;
+  color:#111;
+}

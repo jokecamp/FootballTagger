@@ -1,0 +1,22 @@
+<div ng-controller="ReportCtrl">
+
+  <form ng-submit="addTagToPlayer()">
+    	Player: <input type="text" ng-model="playerIdText" size="5" placeholder="Player" text="1">
+        Tag: <input type="text" ng-model="nameText" size="20" placeholder="Tag Name" text="tag">
+        <input class="btn-primary" type="submit" value="tag player">
+  </form>
+
+	<p>
+		List of Players:
+		<ul>
+	        <li ng-repeat="row in report">
+	          <span>{{row.Player.Firstname}} {{row.Player.Lastname}}</span>
+      					<a href="" class="tag" ng-repeat="pt in row.Tags">
+      						{{ pt.PlayerTag.Id }}
+      						{{ pt.Tag.Id }}
+      						{{ pt.Tag.Name }}
+      					</a>
+	        </li>
+		</ul>
+	</p>
+</div>

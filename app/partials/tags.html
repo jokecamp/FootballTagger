@@ -1,0 +1,16 @@
+<div ng-controller="TagsCtrl">
+	<p>
+		List of Tags:
+		<ul>
+	        <li ng-repeat="t in tags">
+	          <span>{{t.Id}} {{t.Name}}</span>
+	        </li>
+		</ul>
+	</p>
+
+    <form ng-submit="addTag()">
+        <input type="text" ng-model="nameText" size="30" placeholder="name">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+
+</div>
