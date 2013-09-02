@@ -5,10 +5,10 @@ myApp.controller('tagsController',
       
       // if id does not exist on object it will be removed. So we can use this
       // for getting list of /tags and individual tags/1
-      var tag = $resource('http://192.241.243.215/api/tags/:tagId', {tagId:'@Id'});
+      var svc = $resource('http://192.241.243.215/api/tags/:tagId', {tagId:'@Id'});
 
       $scope.getAllTags = function() {
-        $scope.tags = tag.query();
+        $scope.tags = svc.query();
       };
 
       $scope.getAllTags();
@@ -18,7 +18,7 @@ myApp.controller('tagsController',
         $scope.tag.Id = 0;
         
         // u is saved object
-        tag.save($scope.tag, function(u, putResponseHeaders) {
+        svc.save($scope.tag, function(u, putResponseHeaders) {
 
           console.log(u);
           //console.log(putResponseHeaders);
