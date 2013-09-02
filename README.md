@@ -1,5 +1,12 @@
-Football Player Tagger
+Football Player Tagger by Joe Kampschmidt
 
-I created this AngularJS application to learn Angular. It allows you to tag players with attributes and descriptions.
+An experiment in learning AngularJS. Created from the angular-seed.
 
-Based on angular-seed.
+The UI allows for the adding of players, tags and the ability to tag players. The idea being of having a database of players with descriptive tags.
+
+The end goal would be to display example queries like the following:
+
+- all players who are enforcers
+- brilliant and frustrating players
+
+Consumes an API based on my OpenFootballApi https://github.com/jokecamp/OpenFootballApi
