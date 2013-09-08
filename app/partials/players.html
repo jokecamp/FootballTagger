@@ -1,4 +1,11 @@
 <div>
+
+    <form ng-submit="addPlayer()">
+        <input type="text" ng-model="firstnameText" size="30" placeholder="firstname">
+        <input type="text" ng-model="lastnameText" size="30" placeholder="lastname">
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+
 	<p>
 		List of Players:
 		<ul>
@@ -7,11 +14,4 @@
 	        </li>
 		</ul>
 	</p>
-
-    <form ng-submit="addPlayer()">
-        <input type="text" ng-model="firstnameText" size="30" placeholder="firstname">
-        <input type="text" ng-model="lastnameText" size="30" placeholder="lastname">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-
 </div>

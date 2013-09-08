@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-var myApp = angular.module('myApp', ['ngResource']).
+var myApp = angular.module('myApp', ['ngResource', 'restangular']).
 config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.when('/players', {
@@ -22,6 +22,15 @@ config(['$routeProvider',
 		});
 	}
 ])
-	.config(function($httpProvider) {
+.config(function($httpProvider) {
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	});
+
+
+myApp.config(function(RestangularProvider) {
+
+	console.log("configuring restangulr");
+	RestangularProvider.setBaseUrl('http://192.241.243.215/api');
+	RestangularProvider.setRequestSuffix('.json');
+
+});

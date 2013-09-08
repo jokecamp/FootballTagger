@@ -20,6 +20,8 @@ myApp.controller('reportController', ['$scope', '$http',
           $http.post('http://192.241.243.215/api/playertags/0', {
             PlayerId: $scope.playerIdText,
             TagId: data.Id
+          }).success(function(data) {
+              console.log('load new data');
           });
 
         });

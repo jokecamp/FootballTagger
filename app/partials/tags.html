@@ -1,4 +1,10 @@
 <div>
+
+    <form ng-submit="addTag()">
+        <input type="text" ng-model="tag.Name" size="30" placeholder="name">
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+
 	<p>
 		List of Tags:
 		<ul>
@@ -7,10 +13,5 @@
 	        </li>
 		</ul>
 	</p>
-
-    <form ng-submit="addTag()">
-        <input type="text" ng-model="tag.Name" size="30" placeholder="name">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
 
 </div>

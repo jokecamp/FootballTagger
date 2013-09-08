@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>Football Tagger - AngularJS</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
@@ -14,19 +14,24 @@
 
   <div ng-view></div>
    
-  <br><br>
-  <div>Angular seed app: v<span app-version></span></div>
-
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/services/tagService.js"></script>
   <script src="js/controllers/tagsController.js"></script>
   <script src="js/controllers/reportController.js"></script>
   <script src="js/controllers/playerController.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  
+  <!-- Use LATEST folder to always get the latest version-->
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/restangular/latest/restangular.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/1.3.1/lodash.min.js"></script>
+
+
 </body>
 </html>

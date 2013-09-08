@@ -1,35 +1,25 @@
 'use strict';
 
 myApp.controller('tagsController', 
-    function($scope, $http, $resource) {
+    function($scope, tagService) {
       
-      // if id does not exist on object it will be removed. So we can use this
-      // for getting list of /tags and individual tags/1
-      var svc = $resource('http://192.241.243.215/api/tags/:tagId', {tagId:'@Id'});
 
-      $scope.getAllTags = function() {
-        $scope.tags = svc.query();
+      $scope.getTags = function() {
+
+          tagService.getAllTags().then(function(data) { 
+              console.log("getting all tags");
+              $scope.tags = data;
+          });
+
       };
-
-      $scope.getAllTags();
 
       $scope.addTag = function() {
 
-        $scope.tag.Id = 0;
-        
-        // u is saved object
-        svc.save($scope.tag, function(u, putResponseHeaders) {
-
-          console.log(u);
-          //console.log(putResponseHeaders);
-
-          // Refresh List
-          $scope.getAllTags();
-
-          // Clear form
-          $scope.tag.Name = '';
-
-        });
+        console.log("adding new tag");
+        var t = $scope.tag;
+        tagService.addTag(t).then($scope.getTags);
       };
 
+
+      $scope.getTags();
     });
