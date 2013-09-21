@@ -1,16 +1,19 @@
 <div>
 
-    <form ng-submit="addPlayer()">
-        <input type="text" ng-model="firstnameText" size="30" placeholder="firstname">
-        <input type="text" ng-model="lastnameText" size="30" placeholder="lastname">
-        <input class="btn-primary" type="submit" value="add">
+    <form ng-submit="savePlayer()">
+    	<input type="text" ng-model="player.Id" size="10" placeholder="0" readonly />
+        <input type="text" ng-model="player.Firstname" size="30" placeholder="firstname">
+        <input type="text" ng-model="player.Lastname" size="30" placeholder="lastname">
+        <input class="btn-primary" type="submit" value="{{saveMode}}">
     </form>
 
+    <button ng-click="newPlayer()">New Player</button>
 	<p>
 		List of Players:
 		<ul>
 	        <li ng-repeat="player in players">
 	          <span>{{player.Firstname}} {{player.Lastname}}</span>
+	          <button ng-click="loadPlayer(player)">Edit</button>
 	        </li>
 		</ul>
 	</p>

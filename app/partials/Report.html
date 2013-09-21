@@ -10,7 +10,7 @@
 		List of Players:
 		<ul>
 	        <li ng-repeat="row in report">
-	          <span>{{row.Player.Firstname}} {{row.Player.Lastname}}</span>
+	          <span>{{row.Player.Firstname}} {{row.Player.Lastname}} ({{row.Player.Id}})</span>
       					<a href="" class="tag" ng-repeat="pt in row.Tags">
       						{{ pt.PlayerTag.Id }}
       						{{ pt.Tag.Id }}
